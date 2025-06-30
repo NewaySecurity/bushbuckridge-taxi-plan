@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BubbleRoot Studios - Investment Opportunity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo::before {
+            content: '🌳';
+            font-size: 3rem;
+            position: absolute;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 20px;
+            right: 25px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .nav {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        h2 {
+            color: #1e3c72;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: #2a5298;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .financial-table th {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .financial-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .financial-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: width 0.3s ease;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .service-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #00d4aa;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-card h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-tag {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 2rem; }
+            .nav ul { flex-direction: column; gap: 1rem; }
+            .contact-details { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"></div>
+            <h1>BubbleRoot Studios</h1>
+            <p class="subtitle">Investment Opportunity Presentation</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#business-plan">Business Plan</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#financials">Financials</a></li>
+                <li><a href="#investment">Investment</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="overview" class="section">
+        <div class="container">
+            <h2>Executive Summary</h2>
+            <div class="highlight">
+                50/50 Partnership Opportunity - R20,000 Investment for Equal Stake in BubbleRoot Studios
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Company Overview</h3>
+                    <p><strong>BubbleRoot Studios</strong> is a comprehensive digital solutions provider offering AI-enhanced services, internet café operations, and technology retail in Dwarsloop. We combine cutting-edge AI tools with traditional tech services to create a unique market position.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Market Opportunity</h3>
+                    <p>The digital transformation market is booming. Small businesses need affordable, reliable tech solutions. Our hybrid model of physical presence + digital services fills this gap perfectly in the Dwarsloop market.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Competitive Advantage</h3>
+                    <p>First-mover advantage in AI-powered services locally. Established brand identity with professional marketing materials. Diversified revenue streams reduce risk while maximizing profit potential.</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                Target Monthly Revenue: R26,000 - R62,000 within 12 months
+            </div>
+        </div>
+    </section>
+
+    <section id="business-plan" class="section">
+        <div class="container">
+            <h2>Business Plan</h2>
+            
+            <h3>Mission Statement</h3>
+            <p style="font-size: 1.2rem; text-align: center; font-style: italic; margin: 2rem 0;">
+                "To democratize technology access and empower businesses through innovative AI-enhanced digital solutions, making advanced technology affordable and accessible to every business in our community."
+            </p>
+
+            <h3>Business Model</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>🌐 Digital Services</h4>
+                    <p>Website design, graphic design, IT support, digital marketing</p>
+                    <div class="price-tag">R2,500 - R15,000</div>
+                </div>
+                
+                <div class="service-card">
+                    <h4>🤖 AI Solutions</h4>
+                    <p>Prompt engineering, chatbots, automation, AI training</p>
+                    <div class="price-tag">R500 - R8,000</div>
+                </div>
+                
+                <div class="service-card">
+                    <h4>🖥️ Internet Café</h4>
+                    <p>Computer rental, printing, scanning, memberships</p>
+                    <div class="price-tag">R15 - R600</div>
+                </div>
+                
+                <div class="service-card">
+                    <h4>📹 Security Systems</h4>
+                    <p>Dahua CCTV installation, monitoring, maintenance</p>
+                    <div class="price-tag">R3,000 - R15,000</div>
+                </div>
+                
+                <div class="service-card">
+                    <h4>🔧 Electronics Retail</h4>
+                    <p>Andowl products, accessories, tech equipment</p>
+                    <div class="price-tag">40-60% markup</div>
+                </div>
+                
+                <div class="service-card">
+                    <h4>🎯 Recurring Services</h4>
+                    <p>Monthly IT support, hosting, social media management</p>
+                    <div class="price-tag">R150 - R5,000/month</div>
+                </div>
+            </div>
+
+            <h3>Market Analysis</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Target Market</h4>
+                    <ul>
+                        <li>Small to medium businesses (50+ in Dwarsloop area)</li>
+                        <li>Educational institutions needing tech solutions</li>
+                        <li>Individuals requiring internet access and tech support</li>
+                        <li>Security-conscious property owners</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h4>Market Size</h4>
+                    <ul>
+                        <li>Local business market: 200+ potential clients</li>
+                        <li>Internet café users: 50-100 regular customers</li>
+                        <li>Security installations: 20-30 annual projects</li>
+                        <li>Growing demand for AI solutions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Growth Strategy</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 33%">Phase 1: Setup & Launch (Months 1-3)</div>
+            </div>
+            <p>Establish physical location, basic services, internet café operations. Target: Break-even at R15,000 monthly revenue.</p>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 66%">Phase 2: Service Expansion (Months 4-8)</div>
+            </div>
+            <p>Add AI services, expand digital marketing, build recurring client base. Target: R30,000 monthly revenue.</p>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%">Phase 3: Market Leadership (Months 9-12)</div>
+            </div>
+            <p>Establish market dominance, consider expansion, maximize profitability. Target: R50,000+ monthly revenue.</p>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Service Portfolio</h2>
+            
+            <h3>Core Services (Established)</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>🌐 Website Design & Development</h4>
+                    <p>Professional websites for businesses, e-commerce solutions, responsive design</p>
+                    <strong>Revenue: R5,000-15,000 monthly</strong>
+                </div>
+                
+                <div class="card">
+                    <h4>🎨 Graphic Design</h4>
+                    <p>Logo design, branding, marketing materials, vehicle branding</p>
+                    <strong>Revenue: R3,000-8,000 monthly</strong>
+                </div>
+                
+                <div class="card">
+                    <h4>🔧 IT Services</h4>
+                    <p>Technical support, network setup, computer repairs, consultations</p>
+                    <strong>Revenue: R4,000-12,000 monthly</strong>
+                </div>
+                
+                <div class="card">
+                    <h4>📹 CCTV Installations</h4>
+                    <p>Dahua security systems, professional installation, monitoring services</p>
+                    <strong>Revenue: R8,000-25,000 monthly</strong>
+                </div>
+            </div>
+
+            <h3>Expansion Services (High-Demand)</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>🤖 AI Solutions</h4>
+                    <p>Chatbot development, prompt engineering, process automation, AI training</p>
+                    <strong>Revenue Potential: R10,000-30,000 monthly</strong>
+                </div>
+                
+                <div class="card">
+                    <h4>📱 Social Media Management</h4>
+                    <p>Content creation, campaign management, analytics, community management</p>
+                    <strong>Revenue Potential: R5,000-20,000 monthly</strong>
+                </div>
+                
+                <div class="card">
+                    <h4>🛡️ Cybersecurity Services</h4>
+                    <p>Security audits, firewall setup, employee training, data protection</p>
+                    <strong>Revenue Potential: R6,000-18,000 monthly</strong>
+                </div>
+                
+                <div class="card">
+                    <h4>🛒 E-commerce Solutions</h4>
+                    <p>Online store development, payment integration, inventory management</p>
+                    <strong>Revenue Potential: R8,000-25,000 monthly</strong>
+                </div>
+            </div>
+
+            <h3>Internet Café Operations</h3>
+            <div class="card">
+                <h4>💻 Computer Access & Services</h4>
+                <ul>
+                    <li>Hourly computer rental: R15-20/hour</li>
+                    <li>Monthly memberships: R400-600</li>
+                    <li>Printing services: R2-5 per page</li>
+                    <li>Scanning & copying: R5-10 per page</li>
+                    <li>Document services: R50-200 per project</li>
+                </ul>
+                <strong>Projected Revenue: R6,000-12,000 monthly</strong>
+            </div>
+        </div>
+    </section>
+
+    <section id="financials" class="section">
+        <div class="container">
+            <h2>Financial Projections</h2>
+            
+            <h3>Investment Breakdown (R20,000)</h3>
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Percentage</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Internet Café Equipment</td>
+                        <td>R8,000</td>
+                        <td>40%</td>
+                        <td>4 computers, networking, furniture</td>
+                    </tr>
+                    <tr>
+                        <td>Office & Equipment</td>
+                        <td>R4,000</td>
+                        <td>20%</td>
+                        <td>Printer, furniture, tools</td>
+                    </tr>
+                    <tr>
+                        <td>Initial Inventory</td>
+                        <td>R5,000</td>
+                        <td>25%</td>
+                        <td>Dahua & Andowl products</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing & Signage</td>
+                        <td>R2,000</td>
+                        <td>10%</td>
+                        <td>Branding, advertising materials</td>
+                    </tr>
+                    <tr>
+                        <td>Working Capital</td>
+                        <td>R1,000</td>
+                        <td>5%</td>
+                        <td>Emergency fund, utilities</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Monthly Operating Expenses</h3>
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th>Expense</th>
+                        <th>Amount</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rent (Dwarsloop)</td>
+                        <td>R2,500</td>
+                        <td>Target rent for suitable space</td>
+                    </tr>
+                    <tr>
+                        <td>Utilities</td>
+                        <td>R1,000</td>
+                        <td>Electricity, water, waste</td>
+                    </tr>
+                    <tr>
+                        <td>Internet & Communications</td>
+                        <td>R1,200</td>
+                        <td>High-speed internet, phone</td>
+                    </tr>
+                    <tr>
+                        <td>Insurance</td>
+                        <td>R1,000</td>
+                        <td>Business, equipment, liability</td>
+                    </tr>
+                    <tr>
+                        <td>Part-time Staff</td>
+                        <td>R3,500</td>
+                        <td>Internet café supervision</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing</td>
+                        <td>R800</td>
+                        <td>Ongoing advertising, materials</td>
+                    </tr>
+                    <tr>
+                        <td>Miscellaneous</td>
+                        <td>R500</td>
+                        <td>Supplies, maintenance</td>
+                    </tr>
+                    <tr style="background: #f8f9fa; font-weight: bold;">
+                        <td>Total Monthly Expenses</td>
+                        <td>R10,500</td>
+                        <td>Fixed operational costs</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Revenue Projections</h3>
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Internet Café</th>
+                        <th>Services</th>
+                        <th>Product Sales</th>
+                        <th>Total Revenue</th>
+                        <th>Net Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Months 1-3</td>
+                        <td>R3,000</td>
+                        <td>R6,000</td>
+                        <td>R2,000</td>
+                        <td>R11,000</td>
+                        <td>R500</td>
+                    </tr>
+                    <tr>
+                        <td>Months 4-6</td>
+                        <td>R6,000</td>
+                        <td>R14,000</td>
+                        <td>R5,000</td>
+                        <td>R25,000</td>
+                        <td>R14,500</td>
+                    </tr>
+                    <tr>
+                        <td>Months 7-9</td>
+                        <td>R9,000</td>
+                        <td>R25,000</td>
+                        <td>R8,000</td>
+                        <td>R42,000</td>
+                        <td>R31,500</td>
+                    </tr>
+                    <tr style="background: #e8f5e8;">
+                        <td>Months 10-12</td>
+                        <td>R12,000</td>
+                        <td>R35,000</td>
+                        <td>R12,000</td>
+                        <td>R59,000</td>
+                        <td>R48,500</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight">
+                12-Month ROI Projection: R20,000 investment returns R24,250 per partner (121% ROI)
+            </div>
+        </div>
+    </section>
+
+    <section id="investment" class="section">
+        <div class="container">
+            <h2>Investment Opportunity</h2>
+            
+            <div class="highlight">
+                Partnership Offer: 50/50 Equity for R20,000 Investment
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Partnership Structure</h3>
+                    <ul>
+                        <li><strong>Equal Ownership:</strong> 50% equity each</li>
+                        <li><strong>Equal Decision Making:</strong> Joint management</li>
+                        <li><strong>Profit Sharing:</strong> 50/50 split of net profits</li>
+                        <li><strong>Roles:</strong> Brilliant (Operations), Poeletso (Business Development)</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Investment Returns</h3>
+                    <ul>
+                        <li><strong>Month 6:</strong> R7,250 profit per partner</li>
+                        <li><strong>Month 12:</strong> R24,250 profit per partner</li>
+                        <li><strong>Annual ROI:</strong> 121% return on investment</li>
+                        <li><strong>Break-even:</strong> Month 3-4</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Risk Mitigation</h3>
+                    <ul>
+                        <li><strong>Diversified Revenue:</strong> Multiple income streams</li>
+                        <li><strong>Established Brand:</strong> Professional identity ready</li>
+                        <li><strong>Growing Market:</strong> Increasing demand for tech services</li>
+                        <li><strong>Physical Assets:</strong> Equipment retains value</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Growth Potential</h3>
+                    <ul>
+                        <li><strong>Scalability:</strong> Add services without major investment</li>
+                        <li><strong>Recurring Revenue:</strong> Monthly contracts build stability</li>
+                        <li><strong>Market Leadership:</strong> First-mover advantage in AI services</li>
+                        <li><strong>Expansion:</strong> Multiple location opportunities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Use of Investment Funds</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 40%">Equipment Setup - R8,000</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 25%">Initial Inventory - R5,000</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 20%">Office Setup - R4,000</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 10%">Marketing - R2,000</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 5%">Working Capital - R1,000</div>
+            </div>
+
+            <div class="highlight">
+                Expected Timeline: 30 days from investment to launch
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section">
+        <div class="container">
+            <h2>Management Team</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Brilliant Ngobe Mashele</h3>
+                    <h4>Co-Founder & Technical Director</h4>
+                    <p><strong>Role:</strong> Operations management, technical services delivery, client relations, day-to-day operations</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Service delivery and quality control</li>
+                        <li>Technical support and troubleshooting</li>
+                        <li>Client relationship management</li>
+                        <li>Staff supervision and training</li>
+                        <li>Project management and execution</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Poeletso Mashile</h3>
+                    <h4>Co-Founder & Business Development Director</h4>
+                    <p><strong>Role:</strong> Strategic planning, financial management, business development, investor relations</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Financial planning and management</li>
+                        <li>Business development and partnerships</li>
+                        <li>Strategic decision making</li>
+                        <li>Marketing and brand management</li>
+                        <li>Expansion planning and execution</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Organizational Structure</h3>
+            <div class="card">
+                <h4>Partnership Agreement Highlights</h4>
+                <ul>
+                    <li><strong>Decision Making:</strong> Major decisions require mutual agreement</li>
+                    <li><strong>Day-to-Day Operations:</strong> Brilliant has operational authority</li>
+                    <li><strong>Financial Decisions:</strong> Both partners must approve major expenses</li>
+                    <li><strong>Profit Distribution:</strong> Monthly profit sharing based on 50/50 split</li>
+                    <li><strong>Exit Strategy:</strong> Right of first refusal for partnership changes</li>
+                </ul>
+            </div>
+
+            <h3>Staffing Plan</h3>
+            <div class="card">
+                <h4>Phase 1 Staffing (Months 1-6)</h4>
+                <ul>
+                    <li><strong>Partners:</strong> Full-time commitment from both founders</li>
+                    <li><strong>Part-time Assistant:</strong> Internet café supervision (R3,500/month)</li>
+                    <li><strong>Contract Specialists:</strong> As needed for specific projects</li>
+                </ul>
+                
+                <h4>Phase 2 Expansion (Months 7-12)</h4>
+                <ul>
+                    <li><strong>Full-time Technician:</strong> Additional technical support</li>
+                    <li><strong>Marketing Assistant:</strong> Social media and client outreach</li>
+                    <li><strong>Administrative Support:</strong> Bookkeeping and client management</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-info">
+        <div class="container">
+            <h2>Ready to Partner with BubbleRoot Studios?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Join us in revolutionizing digital services in Dwarsloop and beyond. 
+                Together, we can build a profitable, sustainable business that serves our community.
+            </p>
+
+            <div class="contact-details">
+                <div class="contact-card">
+                    <h3>Brilliant Ngobe Mashele</h3>
+                    <p><strong>Co-Founder & Technical Director</strong></p>
+                    <p>📞 065 084 1167</p>
+                    <p>📞 071 528 8404</p>
+                    <p>📧 brilliant@bubbleroots.com</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>BubbleRoot Studios</h3>
+                    <p><strong>Digital Solutions Provider</strong></p>
+                    <p>🌐 Website Design</p>
+                    <p>🎨 Graphic Design</p>
+                    <p>🔧 IT Services</p>
+                    <p>📹 CCTV Installations</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Investment Opportunity</h3>
+                    <p><strong>50/50 Partnership</strong></p>
+                    <p>💰 R20,000 Investment</p>
+                    <p>📈 121% Annual ROI</p>
+                    <p>⏰ 30-day Launch Timeline</p>
+                    <p>🎯 Multiple Revenue Streams</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <a href="tel:0650841167" class="cta-button">Call Now: 065 084 1167</a>
+                <a href="tel:0715288404" class="cta-button">Call Now: 071 528 8404</a>
+            </div>
+
+            <div class="highlight" style="margin-top: 2rem;">
+                "Where Technology Grows Your Business" - Let's grow together!
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #1a1a1a; color: white; text-align: center; padding: 2rem 0;">
+        <div class="container">
+            <p>&copy; 2024 BubbleRoot Studios. All rights reserved.</p>
+            <p>Prepared for: <strong>Poeletso Mashile</strong> | Investment Opportunity Presentation</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to cards when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
