@@ -5,39 +5,307 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bushbuckridge Mobility & Logistics Renaissance</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/turn.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/0.4.7/turn.min.css">
     <style>
-        body { background-color: #f2f2f2; }
-        .presentation { width: 100%; max-width: 600px; margin: auto; }
-        .page { padding: 20px; background-color: white; border: 1px solid #ddd;  }
-        h1, h2, h3 { color: #333; }
+        body { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .presentation { 
+            width: 100%; 
+            max-width: 800px; 
+            margin: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .page { 
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 10px;
+            min-height: 500px;
+        }
+        h1 { 
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h2 { 
+            color: #34495e;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        h3 { 
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .vision-quote {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #2980b9;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #ecf0f1;
+            border-left: 4px solid #3498db;
+        }
+        .phase-section {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .benefit-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #e8f5e8;
+            border-radius: 5px;
+        }
+        .timeline-item {
+            border-left: 3px solid #3498db;
+            padding-left: 15px;
+            margin: 10px 0;
+        }
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        .slogan {
+            text-align: center;
+            font-size: 1.8em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+        @media (max-width: 768px) {
+            .presentation { max-width: 100%; }
+            .page { padding: 20px; min-height: 400px; }
+            h1 { font-size: 2em; }
+        }
     </style>
 </head>
 <body>
 
 <div class="presentation">
+    <!-- Page 1: Title -->
     <div class="page" id="page1">
-        <h1>Bushbuckridge Mobility & Logistics Renaissance</h1>
-        <h2>Presented by: Brilliant Mashele</h2>
-        <h3>Supported by: Bushbuckridge Taxi Association</h3>
-        <p>Date: July 2025</p>
+        <h1>🚛 Bushbuckridge Mobility & Logistics Renaissance</h1>
+        <h2 style="text-align: center; color: #2980b9;">Presented by: Brilliant Mashele</h2>
+        <h3 style="text-align: center;">Supported by: Bushbuckridge Taxi Association (BTA)</h3>
+        <h3 style="text-align: center;">Local Business Stakeholders, Community Leaders</h3>
+        <p style="text-align: center; font-size: 1.2em; margin-top: 30px;">Date: July 2025</p>
     </div>
+    
+    <!-- Page 2: Vision -->
     <div class="page" id="page2">
-        <h1>Vision Statement</h1>
-        <p>"Transforming Bushbuckridge into the economic heartbeat of South Africa..."</p>
+        <h1>✨ Vision Statement</h1>
+        <div class="vision-quote">
+            "Transforming Bushbuckridge into the economic heartbeat of South Africa by integrating modern transport, courier, and warehousing systems owned and driven by our own people."
+        </div>
+        <p style="font-size: 1.1em; margin-top: 20px;">
+            We are creating a future where our transport system empowers local businesses, improves safety, connects communities, and leads the national standard for modern, rural-first logistics.
+        </p>
     </div>
-    <!-- Additional pages... -->
+    
+    <!-- Page 3: Phase 1 Overview -->
+    <div class="page" id="page3">
+        <h1>🌟 Phase 1: What We Can Execute Now</h1>
+        <div class="phase-section">
+            <h2>✅ Goal:</h2>
+            <p>Implement practical, locally funded and locally owned upgrades to the existing taxi and courier system while preparing for future digital infrastructure.</p>
+        </div>
+        <h2>Key Initiatives:</h2>
+        <ul style="font-size: 1.1em;">
+            <li>💳 Cashless Payment via Speedpoints</li>
+            <li>📍 GPS Tracking in Taxis</li>
+            <li>📹 CCTV Camera Installation</li>
+        </ul>
+    </div>
+    
+    <!-- Page 4: Cashless Payment -->
+    <div class="page" id="page4">
+        <h1>💳 Cashless Payment via Speedpoints</h1>
+        <h2>Objective:</h2>
+        <p>Enable card payments in taxis to reduce crime and improve financial tracking.</p>
+        <h2>Method:</h2>
+        <p>Install mobile speedpoints (Capitec, Yoco, FNB, Nedbank)</p>
+        <h2>Benefits:</h2>
+        <div class="benefit-item">💰 Less cash in circulation = safer rides</div>
+        <div class="benefit-item">📊 Digital transaction history for drivers/owners</div>
+        <div class="benefit-item">🏦 Financial inclusion for passengers</div>
+        <h2>Implementation:</h2>
+        <p>• Phase 1: 10 taxis as pilot<br>
+        • Phase 2: Full rollout with local bank partnerships</p>
+    </div>
+    
+    <!-- Page 5: GPS Tracking -->
+    <div class="page" id="page5">
+        <h1>📍 GPS Tracking in Taxis</h1>
+        <h2>Objective:</h2>
+        <p>Real-time vehicle tracking to improve accountability and route efficiency.</p>
+        <h2>Benefits:</h2>
+        <div class="benefit-item">🛡️ Passenger and driver safety</div>
+        <div class="benefit-item">📈 Monitoring & analytics for BTA</div>
+        <div class="benefit-item">📱 Foundation for app-based dispatching in future phases</div>
+        <h2>Implementation:</h2>
+        <p>• Affordable GPS units (R400-R900 per vehicle)<br>
+        • BTA dashboard for real-time oversight</p>
+    </div>
+    
+    <!-- Page 6: CCTV -->
+    <div class="page" id="page6">
+        <h1>📹 CCTV Camera Installation</h1>
+        <h2>Objective:</h2>
+        <p>Increase safety and professionalism through onboard surveillance.</p>
+        <h2>Benefits:</h2>
+        <div class="benefit-item">🚨 Crime prevention & evidence collection</div>
+        <div class="benefit-item">⚖️ Resolves disputes or claims</div>
+        <div class="benefit-item">🤝 Builds public trust</div>
+        <h2>Implementation:</h2>
+        <p>• Install 360° mini cameras or dashcams<br>
+        • Store data on SD cards or cloud when available</p>
+    </div>
+    
+    <!-- Page 7: Community Investment -->
+    <div class="page" id="page7">
+        <h1>🚶‍♂️ Community-Driven Investment Model</h1>
+        <h2>Stakeholder Participation:</h2>
+        <ul>
+            <li>Taxi Owners</li>
+            <li>Local Businesses</li>
+            <li>Spaza Shops</li>
+            <li>Youth Entrepreneurs</li>
+        </ul>
+        <h2>Opportunities:</h2>
+        <div class="benefit-item">💰 Sponsor GPS units, speedpoints, or CCTV</div>
+        <div class="benefit-item">🏷️ Receive branding on taxis ("Sponsored by X")</div>
+        <div class="benefit-item">📊 Monthly reports & public recognition</div>
+        <h2>Outcome:</h2>
+        <p style="font-weight: bold; color: #2980b9;">Keeps ownership local and profits within the community.</p>
+    </div>
+    
+    <!-- Page 8: Courier Expansion -->
+    <div class="page" id="page8">
+        <h1>🚚 Courier & Warehousing Expansion</h1>
+        <div class="vision-quote">
+            "From people to parcels — Bushbuckridge moves it all."
+        </div>
+        <h2>🚚 Community-Owned Courier Fleet</h2>
+        <p><strong>Objective:</strong> Create a local courier system to handle last-mile deliveries for Takealot, Temu, SHEIN, and others.</p>
+        <h3>Plan:</h3>
+        <ul>
+            <li>Acquire small vans, bakkies, or trucks</li>
+            <li>Offer stake/share to local investors (R20K+)</li>
+            <li>Drivers hired locally and trained</li>
+        </ul>
+    </div>
+    
+    <!-- Page 9: Courier Benefits -->
+    <div class="page" id="page9">
+        <h1>📦 Courier Service Benefits</h1>
+        <h2>Benefits:</h2>
+        <div class="benefit-item">⚡ Faster deliveries in rural zones</div>
+        <div class="benefit-item">👥 Job creation & business ownership</div>
+        <div class="benefit-item">🏫 Service schools, clinics, and small shops</div>
+        <h2>Revenue Streams:</h2>
+        <div class="benefit-item">📦 Takealot/Temu last-mile delivery (R25-R55)</div>
+        <div class="benefit-item">🏪 Local business delivery (R30-R80)</div>
+        <div class="benefit-item">⚡ Urgent delivery premiums (R40+)</div>
+    </div>
+    
+    <!-- Page 10: Warehousing -->
+    <div class="page" id="page10">
+        <h1>🏢 Local Warehousing Hubs</h1>
+        <h2>Objective:</h2>
+        <p>Position Bushbuckridge as a regional fulfillment zone.</p>
+        <h2>Action Points:</h2>
+        <ul>
+            <li>Secure warehouse spaces in Dwarsloop, Acornhoek, Cottondale, Thulamahashe</li>
+            <li>Train local youth as packers, sorters, dispatch runners</li>
+            <li>Offer logistics support to spaza shops & small e-commerce sellers</li>
+        </ul>
+        <h2>Partner Integration:</h2>
+        <p>The Courier Guy, PAXI, Aramex, Takealot Pickup Points</p>
+    </div>
+    
+    <!-- Page 11: Timeline -->
+    <div class="page" id="page11">
+        <h1>⏳ Timeline of Execution</h1>
+        <div class="timeline-item">
+            <h3>Phase 1 - July 2025</h3>
+            <p>Stakeholder Meetings, Investment Drive</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Phase 2 - Aug 2025</h3>
+            <p>10-Taxi Pilot Rollout (Speedpoints, GPS, CCTV)</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Phase 3 - Sept – Nov 2025</h3>
+            <p>Courier Fleet & Warehouse Launch</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Phase 4 - Oct – Dec 2025</h3>
+            <p>Digital Monitoring & Reporting</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Phase 5 - 2026 onwards</h3>
+            <p>TaxiPay App & Platform Integration</p>
+        </div>
+    </div>
+    
+    <!-- Page 12: End Game -->
+    <div class="page" id="page12">
+        <h1>⚡ End Game: Bushbuckridge Leads the Nation</h1>
+        <p style="font-size: 1.1em; margin-bottom: 20px;">This model is designed to scale across provinces and align with SANTACO standards.</p>
+        <h2>We're not just improving transport. We are:</h2>
+        <div class="benefit-item">👥 Creating local jobs</div>
+        <div class="benefit-item">💻 Digitizing rural commerce</div>
+        <div class="benefit-item">🏢 Building black-owned logistics networks</div>
+        <div class="benefit-item">🇿🇦 Setting a national example</div>
+    </div>
+    
+    <!-- Page 13: Final Note -->
+    <div class="page" id="page13">
+        <h1>💼 Final Note from the Presenter</h1>
+        <div class="vision-quote">
+            "I am Brilliant Mashele, and this is not just a project — it is our legacy. We are no longer just passengers. We are the ones driving the system forward, for our families, for our future, for South Africa."
+        </div>
+        <p style="font-size: 1.2em; text-align: center; margin: 30px 0;">
+            Together, let us take ownership of our economy and build what others only imagine.
+        </p>
+        <div class="slogan">
+            "From Kasi to Kasi — Fast. Safe. Ours."
+        </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="path/to/turn.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/0.4.7/turn.min.js"></script>
 <script>
     $(document).ready(function () {
-        $(".presentation").turn({
-            width: 600,
-            height: 400,
-            autoCenter: true
-        });
+        if ($(window).width() > 768) {
+            $(".presentation").turn({
+                width: 800,
+                height: 600,
+                autoCenter: true,
+                gradients: true,
+                acceleration: true
+            });
+        } else {
+            // Mobile: Show as regular scrollable pages
+            $(".presentation").css({
+                'display': 'block',
+                'width': '100%'
+            });
+            $(".page").css({
+                'display': 'block',
+                'margin-bottom': '20px'
+            });
+        }
     });
 </script>
 
